@@ -744,21 +744,20 @@ def login():
         else:
             return '<h3 style="color:red;text-align:center;margin-top:100px;">ভুল ইউজারনেম বা পাসওয়ার্ড!</h3><center><a href="/login">আবার চেষ্টা করুন</a></center>'
 
+    # লগিন পেজ (আগের মতোই)
     return '''
     <!DOCTYPE html>
     <html lang="bn">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>লগিন - McDry Desiccant Ltd</title>
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;600;700&display=swap" rel="stylesheet">
-        <style>
-            body {font-family:'Hind Siliguri',sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color:#e2e8f0; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;}
-            .login-box {background:rgba(30,41,59,0.9); padding:60px; border-radius:30px; text-align:center; max-width:400px; box-shadow:0 20px 60px rgba(0,0,0,0.8);}
-            h2 {font-size:2.8rem; color:#fbbf24; margin-bottom:20px;}
-            input {width:100%; padding:18px; margin:15px 0; border-radius:50px; border:none; font-size:1.4rem; background:#1e293b; color:white;}
-            button {width:100%; padding:18px; background:#10b981; color:white; border:none; border-radius:50px; font-size:1.6rem; cursor:pointer;}
-        </style>
+    <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগিন - McDry Desiccant Ltd</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {font-family:'Hind Siliguri',sans-serif;background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);color:#e2e8f0;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;}
+        .login-box {background:rgba(30,41,59,0.9);padding:60px;border-radius:30px;text-align:center;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.8);}
+        h2 {font-size:2.8rem;color:#fbbf24;margin-bottom:20px;}
+        input {width:100%;padding:18px;margin:15px 0;border-radius:50px;border:none;font-size:1.4rem;background:#1e293b;color:white;}
+        button {width:100%;padding:18px;background:#10b981;color:white;border:none;border-radius:50px;font-size:1.6rem;cursor:pointer;}
+    </style>
     </head>
     <body>
         <div class="login-box">
@@ -779,15 +778,14 @@ def logout():
     session.pop('logged_in', None)
     return redirect('/login')
 
-@app.route('/home', methods=['GET', 'POST'])
-def home():
+# === এখানে পরিবর্তন: /home/<any> দিয়ে সব ?area=... URL কভার করা হয়েছে ===
+@app.route('/home', defaults={'path': ''}, methods=['GET', 'POST'])
+@app.route('/home/<path:path>', methods=['GET', 'POST'])
+def home(path):
     if not session.get('logged_in'):
         return redirect('/login')
 
-    # ঠিক করা হয়েছে: area_filter → area
     area = request.args.get('area', 'all')
-
-    # সার্চ
     search_query = request.form.get('search', '').strip().lower() if request.method == 'POST' else ''
 
     filtered = companies
@@ -800,9 +798,9 @@ def home():
                     search_query in c['id'] or
                     search_query in (c.get('mar', '') or '').lower()]
 
-    return render_template('index.html',  # তোমার HTML ফাইলের নাম যদি index.html হয়
+    return render_template('index.html',
                            companies=filtered,
-                           selected_area=area,  # এখানে area_filter না, area
+                           selected_area=area,
                            total=len(companies),
                            my_name=MY_NAME,
                            my_photo=MY_PHOTO,
