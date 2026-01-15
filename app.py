@@ -73,7 +73,7 @@ companies = [
     {"area":"Uttara","id":"45-1","name":"Loop Dot Fashion Ltd. (near Labaid Hospital)","location":"H-35, Gorib E Newaj Road, S-12","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"Taiful 01713038045","others":"","mar":"Imran 01674121110"},
     {"area":"Uttara","id":"45-2","name":"Next Composite Ltd.","location":"same","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":""},
     {"area":"Uttara","id":"46","name":"Pantex Accessories (Pvt) Ltd. (BNS Opposite)","location":"H-9, R-3, S-6","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":"Sharif 01712778293"},
-    {"area":"Uttara","id":"47","name":"Aphrodite Design Link Ltd.","location":"Rajlokki name bam borobari 1km, H-40, 3 tala, R-13, S-4","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"accounts Bahauddin 01728256578","others":"","mar":""},
+    {"area":"Uttara","id":"47","name":"Aphrodite Design Link Ltd.","location":"Lift-05, H-11, R-14/C, S-4","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"accounts Bahauddin 01728256578","others":"","mar":""},
     {"area":"Uttara","id":"48-1","name":"Core Spun Apparels Ltd. (near Sagordi Bypass)","location":"Factory: Mirer Bazar theke Gouchia road Anumanik 5km giye Panjura mor theke bam half km giye dan","doc_sub":"factory store Masud 01868629517, store Bojrul 01","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":"Eaqub 01771604688, 01777788806"},
     {"area":"Uttara","id":"48-2","name":"Purbachal Apparels Ltd.","location":"same","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":""},
     {"area":"Uttara","id":"49","name":"Silken Swing Ltd. (Josimuddin road er ses matha dan samne giye abar dan)","location":"H-2, R-20/A, S-3","doc_sub":"Bill Sub:Mr. Rejaul (Cotton On) (And Bill Of Exchange Submit Merchandiser Attn)","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":"H/O Jainab Jabin 01844173103, (Perry Ellis) H/O Nirob Shahriar 01811444912"},
@@ -989,3 +989,4 @@ def index():
 if __name__ == '__main__':
 
     app.run(debug=True)
+
