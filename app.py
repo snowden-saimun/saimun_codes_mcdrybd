@@ -243,7 +243,7 @@ companies = [
     {"area":"Uttara","id":"179","name":"SOS Outfitters Ltd.","location":"H-2, R-4, S-3, Uttara","doc_sub":"","doc_coll":"","chalan_coll":"store","bill_coll":"","others":"","mar":"(WALMART) Tasni 01777799957"},
     {"area":"Uttara","id":"180","name":"TNT Export International Ltd.","location":"(2 tala) Mina House, H-10, R-15, S-14, Uttara near Ajompur stand opposite Gausul Azam roader maj borobari giye bam vitore","doc_sub":"","doc_coll":"","chalan_coll":"store","bill_coll":"","others":"","mar":"(George) Tansin 01645941643"},
     {"area":"Uttara","id":"181","name":"AR Jeans Ltd.","location":"Grand Tower ECB Chattar stand Mirpur road","doc_sub":"(lift-11) Merchandiser borobari / reception","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":"(LPP) Foyej 01708831043"},
-   
+    {"area":"Uttara","id":"182","name":"Natural Denim","location":"H-12, R-Lake Drive Road, Nikunja-1","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"Mr Awlad","others":"","mar":""},
     #Ashulia
     {"area":"Ashulia","id":"0","name":"CNF Kamal (DEPZ)","location":"","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"","others":"Doc Collect/Submit Juel 01","mar":"Kamal 01911714845, Anis 01789784729"},
     {"area":"Ashulia","id":"1","name":"New Asia Fashion Ltd. (Charabag)","location":"near Charabag stand (lift-4)","doc_sub":"","doc_coll":"","chalan_coll":"","bill_coll":"","others":"","mar":"lift-4"},
@@ -987,4 +987,5 @@ def index():
     return redirect('/login')
 
 if __name__ == '__main__':
+
     app.run(debug=True)
